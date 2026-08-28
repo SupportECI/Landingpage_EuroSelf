@@ -11,114 +11,139 @@ export function ProgramsComparison({ onSelectProgram }) {
   };
 
   return (
-    <section className="programs-section section-spacing" id="programas">
-      <div className="container">
-        <div className="section-header">
-          <span className="badge-tag badge-gold">Precios Claros y Transparentes</span>
-          <h2 className="section-title">Elige el programa que mejor se adapte a tu meta</h2>
-          <p className="section-subtitle">
+    <section className="bg-white py-16 sm:py-20 lg:py-24" id="programas">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <span className="inline-flex items-center gap-1.5 bg-amber-100 text-amber-800 font-bold text-xs uppercase px-3.5 py-1 rounded-full tracking-wider mb-3">
+            Precios Claros y Transparentes
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight mb-4">
+            Elige el programa que mejor se adapte a tu meta
+          </h2>
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
             Sin costos ocultos ni letras pequeñas. Inversión fija durante los 4 meses de tu capacitación.
           </p>
         </div>
 
-        <div className="programs-grid">
-          {/* Tarjeta Programa 1: Euroself Core */}
-          <div className="program-card featured">
-            <span className="featured-top-badge">
-              <Star size={14} style={{ marginRight: 4, verticalAlign: 'middle' }} />
+        {/* Programs Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+          {/* Tarjeta 1: Euroself Core (Destacada) */}
+          <div className="relative bg-gradient-to-b from-sky-50/70 via-white to-white border-2 border-brand-blue rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl shadow-brand-blue/10 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl">
+            {/* Featured Badge */}
+            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 bg-gradient-to-r from-brand-blue to-brand-cyan text-white text-xs font-extrabold uppercase px-4 py-1 rounded-full shadow-md whitespace-nowrap tracking-wider">
+              <Star size={13} className="fill-current text-amber-300" />
               {core.badge}
             </span>
 
-            <div className="program-header">
-              <h3 className="program-name">{core.name}</h3>
-              <div className="program-target-box">
-                🎯 {core.target}
+            <div>
+              <div className="text-center pb-6 mb-6 border-b border-slate-200 pt-2">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-navy-900 mb-2">
+                  {core.name}
+                </h3>
+                <div className="inline-block bg-slate-100 text-navy-800 text-xs sm:text-sm font-semibold px-3 py-1 rounded-lg mb-4">
+                  🎯 {core.target}
+                </div>
+
+                <div className="flex items-baseline justify-center gap-1 mb-1">
+                  <span className="text-xl font-bold text-navy-900">$</span>
+                  <span className="text-4xl sm:text-5xl font-extrabold text-navy-900 tracking-tight">
+                    {core.monthlyPrice}
+                  </span>
+                  <span className="text-sm font-semibold text-slate-500">MXN / mes</span>
+                </div>
+                <p className="text-xs text-slate-500">
+                  4 pagos mensuales (Total: ${core.totalPrice.toLocaleString()} MXN)
+                </p>
               </div>
 
-              <div className="program-price-container">
-                <span className="program-price-currency">$</span>
-                <span className="program-price-amount">{core.monthlyPrice}</span>
-                <span className="program-price-period">MXN / mes</span>
-              </div>
-              <p className="program-price-subtext">
-                4 pagos mensuales (Total: ${core.totalPrice.toLocaleString()} MXN)
-              </p>
+              {/* Features List */}
+              <ul className="space-y-3 mb-8">
+                {core.content.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm sm:text-base text-slate-700">
+                    <Check size={18} className="text-brand-blue shrink-0 mt-0.5" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <ul className="program-features-list">
-              {core.content.map((feature, idx) => (
-                <li key={idx} className="program-feature-item">
-                  <Check size={18} className="check-icon" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
+            <div>
+              {/* Meta details */}
+              <div className="bg-slate-50 rounded-xl p-4 mb-6 text-xs sm:text-sm space-y-2 border border-slate-100">
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-500">Requisito de ingreso:</span>
+                  <span className="font-bold text-navy-900 text-right">{core.requirements}</span>
+                </div>
+                <div className="flex justify-between items-center border-t border-dashed border-slate-200 pt-2">
+                  <span className="text-slate-500">Duración:</span>
+                  <span className="font-bold text-navy-900 text-right">{core.duration}</span>
+                </div>
+              </div>
 
-            <div className="program-meta-info">
-              <div className="meta-row">
-                <span className="meta-label">Requisito de ingreso:</span>
-                <span className="meta-val">{core.requirements}</span>
-              </div>
-              <div className="meta-row">
-                <span className="meta-label">Duración:</span>
-                <span className="meta-val">{core.duration}</span>
-              </div>
+              <button 
+                onClick={() => handleChoose(core.id)}
+                className="w-full inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-blue-hover text-white font-bold text-base py-3.5 px-6 rounded-xl shadow-lg shadow-brand-blue/25 hover:shadow-xl hover:shadow-brand-blue/35 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+              >
+                {core.ctaText} <ArrowRight size={18} />
+              </button>
             </div>
-
-            <button 
-              onClick={() => handleChoose(core.id)}
-              className="btn-primary"
-              style={{ width: '100%' }}
-            >
-              {core.ctaText} <ArrowRight size={18} />
-            </button>
           </div>
 
-          {/* Tarjeta Programa 2: Euroself Specialty */}
-          <div className="program-card">
-            <div className="program-header">
-              <h3 className="program-name">{specialty.name}</h3>
-              <div className="program-target-box">
-                💼 {specialty.target}
+          {/* Tarjeta 2: Euroself Specialty */}
+          <div className="bg-white border-2 border-slate-200 hover:border-slate-300 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-sm flex flex-col justify-between transition-all duration-300 hover:shadow-lg">
+            <div>
+              <div className="text-center pb-6 mb-6 border-b border-slate-200 pt-2">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-navy-900 mb-2">
+                  {specialty.name}
+                </h3>
+                <div className="inline-block bg-slate-100 text-navy-800 text-xs sm:text-sm font-semibold px-3 py-1 rounded-lg mb-4">
+                  💼 {specialty.target}
+                </div>
+
+                <div className="flex items-baseline justify-center gap-1 mb-1">
+                  <span className="text-xl font-bold text-navy-900">$</span>
+                  <span className="text-4xl sm:text-5xl font-extrabold text-navy-900 tracking-tight">
+                    {specialty.monthlyPrice.toLocaleString()}
+                  </span>
+                  <span className="text-sm font-semibold text-slate-500">MXN / mes</span>
+                </div>
+                <p className="text-xs text-slate-500">
+                  4 pagos mensuales (Total: ${specialty.totalPrice.toLocaleString()} MXN)
+                </p>
               </div>
 
-              <div className="program-price-container">
-                <span className="program-price-currency">$</span>
-                <span className="program-price-amount">{specialty.monthlyPrice.toLocaleString()}</span>
-                <span className="program-price-period">MXN / mes</span>
-              </div>
-              <p className="program-price-subtext">
-                4 pagos mensuales (Total: ${specialty.totalPrice.toLocaleString()} MXN)
-              </p>
+              {/* Features List */}
+              <ul className="space-y-3 mb-8">
+                {specialty.content.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm sm:text-base text-slate-700">
+                    <Check size={18} className="text-brand-blue shrink-0 mt-0.5" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <ul className="program-features-list">
-              {specialty.content.map((feature, idx) => (
-                <li key={idx} className="program-feature-item">
-                  <Check size={18} className="check-icon" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
+            <div>
+              {/* Meta details */}
+              <div className="bg-slate-50 rounded-xl p-4 mb-6 text-xs sm:text-sm space-y-2 border border-slate-100">
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-500">Requisito de ingreso:</span>
+                  <span className="font-bold text-navy-900 text-right">{specialty.requirements}</span>
+                </div>
+                <div className="flex justify-between items-center border-t border-dashed border-slate-200 pt-2">
+                  <span className="text-slate-500">Duración:</span>
+                  <span className="font-bold text-navy-900 text-right">{specialty.duration}</span>
+                </div>
+              </div>
 
-            <div className="program-meta-info">
-              <div className="meta-row">
-                <span className="meta-label">Requisito de ingreso:</span>
-                <span className="meta-val">{specialty.requirements}</span>
-              </div>
-              <div className="meta-row">
-                <span className="meta-label">Duración:</span>
-                <span className="meta-val">{specialty.duration}</span>
-              </div>
+              <button 
+                onClick={() => handleChoose(specialty.id)}
+                className="w-full inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 border-2 border-navy-900 text-navy-900 font-bold text-base py-3.5 px-6 rounded-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+              >
+                {specialty.ctaText} <ArrowRight size={18} />
+              </button>
             </div>
-
-            <button 
-              onClick={() => handleChoose(specialty.id)}
-              className="btn-outline"
-              style={{ width: '100%', borderColor: 'var(--navy-900)' }}
-            >
-              {specialty.ctaText} <ArrowRight size={18} />
-            </button>
           </div>
         </div>
       </div>

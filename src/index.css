@@ -1,3 +1,52 @@
-/* Main entry point for styles */
-@import './styles/index.css';
-@import './styles/components.css';
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #07111e;
+  --color-navy-900: #0b192c;
+  --color-navy-800: #132a48;
+  --color-navy-700: #1e3e62;
+  --color-navy-600: #2a527f;
+
+  --color-brand-blue: #0077c2;
+  --color-brand-blue-hover: #0062a3;
+  --color-brand-cyan: #0284c7;
+  --color-brand-cyan-light: #e0f2fe;
+  --color-brand-gold: #f59e0b;
+  --color-brand-gold-bg: #fef3c7;
+
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #1ebc59;
+  --color-whatsapp-dark: #128c7e;
+
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #0f172a;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2.5s infinite ease-in-out;
+}

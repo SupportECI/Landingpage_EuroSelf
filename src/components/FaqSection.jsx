@@ -11,33 +11,53 @@ export function FaqSection() {
   };
 
   return (
-    <section className="faq-section section-spacing" id="faqs">
-      <div className="container">
-        <div className="section-header">
-          <span className="badge-tag">Respuestas Claras</span>
-          <h2 className="section-title">Preguntas Frecuentes</h2>
-          <p className="section-subtitle">
+    <section className="bg-white py-16 sm:py-20 lg:py-24" id="faqs">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <span className="inline-flex items-center gap-1.5 bg-sky-100 text-brand-cyan font-bold text-xs uppercase px-3.5 py-1 rounded-full tracking-wider mb-3">
+            Respuestas Claras
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight mb-4">
+            Preguntas Frecuentes
+          </h2>
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
             Resolvemos tus dudas sobre horarios, metodología, certificación y formas de pago.
           </p>
         </div>
 
-        <div className="faq-accordion-container">
+        {/* Accordion Container */}
+        <div className="max-w-3xl mx-auto space-y-4">
           {FAQ_DATA.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (
-              <div key={idx} className={`faq-item ${isOpen ? 'open' : ''}`}>
+              <div 
+                key={idx} 
+                className={`border rounded-2xl transition-all duration-200 overflow-hidden ${
+                  isOpen ? 'border-brand-blue bg-white shadow-md' : 'border-slate-200 bg-white hover:border-slate-300'
+                }`}
+              >
                 <button
                   type="button"
-                  className="faq-question-btn"
+                  className="w-full py-5 px-6 flex items-center justify-between gap-4 text-left cursor-pointer transition-colors"
                   onClick={() => toggleIndex(idx)}
                   aria-expanded={isOpen}
                 >
-                  <span className="faq-question-text">{item.q}</span>
-                  <ChevronDown size={20} className="faq-toggle-icon" />
+                  <span className={`text-base sm:text-lg font-bold transition-colors ${
+                    isOpen ? 'text-brand-blue' : 'text-navy-900'
+                  }`}>
+                    {item.q}
+                  </span>
+                  <ChevronDown 
+                    size={20} 
+                    className={`text-brand-blue shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180' : ''
+                    }`} 
+                  />
                 </button>
 
                 {isOpen && (
-                  <div className="faq-answer-content">
+                  <div className="px-6 pb-5 pt-1 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100">
                     <p>{item.a}</p>
                   </div>
                 )}
@@ -47,18 +67,17 @@ export function FaqSection() {
         </div>
 
         {/* Bloque de Ayuda Adicional */}
-        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', marginBottom: '0.75rem' }}>
+        <div className="text-center mt-12">
+          <p className="text-sm text-slate-500 mb-3">
             ¿Tienes alguna otra duda específica sobre tu caso?
           </p>
           <a
             href={getQuickWhatsAppLink('Hola, tengo una pregunta específica sobre el programa de inglés de Euroself que me gustaría aclarar.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-outline"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+            className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-navy-900 font-bold text-sm px-5 py-2.5 rounded-xl border border-slate-300 shadow-sm transition-all hover:shadow cursor-pointer"
           >
-            <MessageCircle size={18} color="var(--whatsapp-green)" /> Hablar con un asesor en WhatsApp
+            <MessageCircle size={18} className="text-whatsapp" /> Hablar con un asesor en WhatsApp
           </a>
         </div>
       </div>

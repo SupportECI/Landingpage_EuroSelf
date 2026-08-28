@@ -23,10 +23,10 @@ function App() {
     const formElement = document.getElementById('formulario-captura');
     if (formElement) {
       formElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      // Focus visual sutil
-      formElement.style.boxShadow = '0 0 0 3px #0284c7, 0 20px 35px -5px rgba(11, 25, 44, 0.2)';
+      // Focus visual sutil con clases Tailwind / animación
+      formElement.classList.add('ring-4', 'ring-brand-cyan', 'ring-offset-2');
       setTimeout(() => {
-        formElement.style.boxShadow = '';
+        formElement.classList.remove('ring-4', 'ring-brand-cyan', 'ring-offset-2');
       }, 2000);
     }
   };
@@ -39,7 +39,7 @@ function App() {
   };
 
   return (
-    <div className="landing-wrapper">
+    <div className="min-h-screen flex flex-col bg-white text-slate-900 font-sans selection:bg-brand-blue selection:text-white">
       {/* 1A. Banner Superior Promocional */}
       <PromoBanner onCtaClick={() => scrollToForm('Euroself Core')} />
 
@@ -49,7 +49,7 @@ function App() {
         onFormScroll={() => scrollToForm('Euroself Core')} 
       />
 
-      <main>
+      <main className="flex-1">
         {/* 2 & 3. Hero con Formulario Inteligente y Lógica WhatsApp */}
         <Hero 
           selectedProgram={selectedProgram}

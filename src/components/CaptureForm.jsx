@@ -48,29 +48,34 @@ export function CaptureForm({ selectedProgram, onFormSubmitSuccess }) {
   const previewName = formData.name.trim() || '[Tu Nombre]';
 
   return (
-    <div className="smart-form-card" id="formulario-captura">
-      <div className="form-header">
-        <span className="form-header-badge">
+    <div 
+      className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl shadow-navy-950/20 border border-slate-200 text-slate-900 transition-all duration-300 relative"
+      id="formulario-captura"
+    >
+      <div className="mb-5">
+        <span className="inline-flex items-center gap-1.5 bg-amber-100 text-amber-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-2">
           <Sparkles size={13} /> Asesoría 1 a 1 Gratuita
         </span>
-        <h3 className="form-title">Descubre tu plan ideal</h3>
-        <p className="form-subtitle">
-          Recibe recomendación personalizada y asegura tu precio de <strong>$975 MXN/mes</strong>.
+        <h3 className="text-xl sm:text-2xl font-extrabold text-navy-900 tracking-tight mb-1">
+          Descubre tu plan ideal
+        </h3>
+        <p className="text-sm text-slate-500">
+          Recibe recomendación personalizada y asegura tu precio de <strong className="text-navy-900 font-semibold">$975 MXN/mes</strong>.
         </p>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="space-y-4">
         {/* Campo 1: Nombre */}
-        <div className="form-group">
-          <label className="form-label" htmlFor="form-name">
-            <span>Tu nombre</span>
+        <div>
+          <label className="block text-xs sm:text-sm font-bold text-navy-900 mb-1.5" htmlFor="form-name">
+            Tu nombre
           </label>
-          <div className="input-with-icon">
-            <User size={18} className="input-icon" />
+          <div className="relative">
+            <User size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
             <input
               id="form-name"
               type="text"
-              className="form-input"
+              className="w-full pl-10 pr-4 py-2.5 sm:py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm sm:text-base text-slate-800 placeholder-slate-400 focus:bg-white focus:border-brand-cyan focus:ring-3 focus:ring-brand-cyan/15 focus:outline-none transition-all"
               placeholder="Ej. Carlos Mendoza"
               value={formData.name}
               onChange={(e) => handleInputChange('name', e.target.value)}
@@ -80,64 +85,75 @@ export function CaptureForm({ selectedProgram, onFormSubmitSuccess }) {
         </div>
 
         {/* Campo 2: Teléfono / WhatsApp */}
-        <div className="form-group">
-          <label className="form-label" htmlFor="form-phone">
-            <span>WhatsApp / Teléfono</span>
-            <span className="form-label-optional">(Opcional)</span>
-          </label>
-          <div className="input-with-icon">
-            <Phone size={18} className="input-icon" />
+        <div>
+          <div className="flex items-center justify-between mb-1.5">
+            <label className="text-xs sm:text-sm font-bold text-navy-900" htmlFor="form-phone">
+              WhatsApp / Teléfono
+            </label>
+            <span className="text-xs text-slate-400 font-normal">(Opcional)</span>
+          </div>
+          <div className="relative">
+            <Phone size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
             <input
               id="form-phone"
               type="tel"
-              className="form-input"
-              placeholder="Ej. 961 849 6379"
+              className="w-full pl-10 pr-4 py-2.5 sm:py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm sm:text-base text-slate-800 placeholder-slate-400 focus:bg-white focus:border-brand-cyan focus:ring-3 focus:ring-brand-cyan/15 focus:outline-none transition-all"
+              placeholder="Ej. 961 123 4567"
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
             />
           </div>
         </div>
 
-        {/* Campo 3: Nivel de inglés actual (Botones interactivos) */}
-        <div className="form-group">
-          <label className="form-label">
-            <span>Nivel de inglés actual</span>
+        {/* Campo 3: Nivel de inglés actual */}
+        <div>
+          <label className="block text-xs sm:text-sm font-bold text-navy-900 mb-1.5">
+            Nivel de inglés actual
           </label>
-          <div className="pill-grid grid-full-first">
-            {LEVEL_OPTIONS.map((opt) => {
+          <div className="grid grid-cols-2 gap-2">
+            {LEVEL_OPTIONS.map((opt, idx) => {
               const isSelected = formData.level === opt.id;
+              const isLastFull = idx === LEVEL_OPTIONS.length - 1;
               return (
                 <button
                   key={opt.id}
                   type="button"
-                  className={`pill-option-btn ${isSelected ? 'active' : ''}`}
+                  className={`${isLastFull ? 'col-span-2' : 'col-span-1'} p-2.5 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 border transition-all duration-150 cursor-pointer text-center ${
+                    isSelected
+                      ? 'bg-navy-900 text-white border-navy-900 shadow-md shadow-navy-900/20'
+                      : 'bg-slate-50 text-navy-900 border-slate-200 hover:border-brand-cyan hover:bg-sky-50'
+                  }`}
                   onClick={() => handleLevelSelect(opt.id)}
                 >
-                  {isSelected && <Check size={14} />}
-                  <span>{opt.label}</span>
+                  {isSelected && <Check size={13} className="shrink-0 text-sky-300" />}
+                  <span className="truncate">{opt.label}</span>
                 </button>
               );
             })}
           </div>
         </div>
 
-        {/* Campo 4: ¿Para qué quieres el inglés? (Botones interactivos) */}
-        <div className="form-group">
-          <label className="form-label">
-            <span>¿Para qué buscas aprender inglés?</span>
+        {/* Campo 4: ¿Para qué buscas aprender inglés? */}
+        <div>
+          <label className="block text-xs sm:text-sm font-bold text-navy-900 mb-1.5">
+            ¿Para qué buscas aprender inglés?
           </label>
-          <div className="pill-grid">
+          <div className="grid grid-cols-2 gap-2">
             {GOAL_OPTIONS.map((opt) => {
               const isSelected = formData.goal === opt.id;
               return (
                 <button
                   key={opt.id}
                   type="button"
-                  className={`pill-option-btn ${isSelected ? 'active' : ''}`}
+                  className={`p-2.5 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 border transition-all duration-150 cursor-pointer text-center ${
+                    isSelected
+                      ? 'bg-navy-900 text-white border-navy-900 shadow-md shadow-navy-900/20'
+                      : 'bg-slate-50 text-navy-900 border-slate-200 hover:border-brand-cyan hover:bg-sky-50'
+                  }`}
                   onClick={() => handleGoalSelect(opt.id)}
                 >
-                  {isSelected && <Check size={14} />}
-                  <span>{opt.label}</span>
+                  {isSelected && <Check size={13} className="shrink-0 text-sky-300" />}
+                  <span className="truncate">{opt.label}</span>
                 </button>
               );
             })}
@@ -145,22 +161,25 @@ export function CaptureForm({ selectedProgram, onFormSubmitSuccess }) {
         </div>
 
         {/* Vista previa del mensaje de WhatsApp */}
-        <div className="whatsapp-preview-box">
-          <div className="whatsapp-preview-header">
-            <MessageSquare size={14} /> Mensaje pre-cargado que enviarás:
+        <div className="bg-emerald-50/80 border border-dashed border-emerald-300 rounded-xl p-3.5 text-left">
+          <div className="flex items-center gap-1.5 text-[11px] font-bold text-emerald-800 uppercase tracking-wide mb-1">
+            <MessageSquare size={13} /> Mensaje pre-cargado que enviarás:
           </div>
-          <p className="whatsapp-preview-text">
+          <p className="text-xs text-emerald-900 italic leading-relaxed">
             "Hola, soy {previewName}. Quiero información sobre el programa de inglés de Euroself. Mi nivel actual es {previewLevel} y busco el inglés principalmente para {previewGoal}. ¿Me pueden orientar...?"
           </p>
         </div>
 
         {/* CTA Específico */}
-        <button type="submit" className="btn-whatsapp form-submit-btn">
+        <button 
+          type="submit" 
+          className="w-full inline-flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-base py-3.5 px-6 rounded-xl shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/35 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+        >
           <Send size={18} /> Quiero conocer mi programa ideal
         </button>
 
-        <div className="form-guarantee-note">
-          <Lock size={13} /> Tus datos están 100% protegidos. Sin llamadas molestas.
+        <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-400 text-center pt-1">
+          <Lock size={12} /> Tus datos están 100% protegidos. Sin llamadas molestas.
         </div>
       </form>
     </div>
