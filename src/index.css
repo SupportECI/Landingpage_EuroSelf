@@ -1,0 +1,3 @@
+/* Main entry point for styles */
+@import './styles/index.css';
+@import './styles/components.css';
