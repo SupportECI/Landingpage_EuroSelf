@@ -6,7 +6,7 @@ export function SocialProof() {
     <section className="bg-slate-50 py-16 sm:py-20 lg:py-24" id="testimonios">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Metrics Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 bg-navy-900 text-white rounded-3xl p-6 sm:p-10 mb-16 shadow-xl shadow-navy-950/15">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 bg-navy-900 text-white rounded-3xl p-6 sm:p-10 mb-16 shadow-xl shadow-navy-950/15">
           {METRICS_DATA.map((metric, idx) => (
             <div 
               key={idx} 

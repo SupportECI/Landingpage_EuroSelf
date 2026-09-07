@@ -1,24 +1,24 @@
 // Datos completos de contenido para la Landing Page de Euroself Academy
 
 export const PROMO_DATA = {
-  pricePerMonth: '$975',
+  pricePerMonth: '$895',
   currency: 'MXN',
-  urgencyText: 'Cupo limitado de lanzamiento — Ahorra hasta 35% en tu inscripción',
+  urgencyText: 'Cupo limitado de lanzamiento',
   spotsRemaining: 8,
 };
 
 export const WHAT_INCLUDES_DATA = [
   {
     id: 1,
-    title: 'Plataforma de Aprendizaje 24/7',
-    description: 'Acceso ilimitado a clases interactivas, ejercicios prácticos y materiales de estudio en cualquier dispositivo.',
+    title: 'Plataforma de autoestudio 24/7',
+    description: 'Acceso ilimitado a sesiones interactivas, ejercicios prácticos y materiales de estudio en cualquier dispositivo.',
     icon: 'MonitorPlay',
     tag: 'Acceso Total',
   },
   {
     id: 2,
-    title: '2 Clases Grupales en Vivo por Semana',
-    description: 'Sesiones dinámicas con docentes certificados los lunes y miércoles de 8:00 a 9:00 pm (horario ideal para profesionistas).',
+    title: '2 sesiones Grupales en Vivo por Semana',
+    description: 'Sesiones dinámicas con docentes certificados los lunes y miércoles (horario ideal para profesionistas).',
     icon: 'Users',
     tag: 'En Tiempo Real',
   },
@@ -38,7 +38,7 @@ export const WHAT_INCLUDES_DATA = [
   },
   {
     id: 5,
-    title: 'Todas las Clases Quedan Grabadas',
+    title: 'Todas las sesiones Quedan Grabadas',
     description: '¿No pudiste conectarte a una sesión? Repásalas cuantas veces quieras desde tu biblioteca de grabaciones.',
     icon: 'Video',
     tag: 'A tu ritmo',
@@ -70,14 +70,14 @@ export const PROGRAMS_DATA = {
       'Módulo English Core completo según tu nivel MCER',
       '3 Módulos ESP a elección (Salud, Negocios, IT, Hospitalidad, etc.)',
       'Acceso a plataforma 24/7 y asistente con IA',
-      '2 clases en vivo grupales + 1 tutoría 1 a 1 semanal',
+      '2 sesiones en vivo grupales + 1 tutoría 1 a 1 semanal',
       'Viernes de inmersión y clubes de conversación',
     ],
     requirements: 'Ninguno — Examen de ubicación gratuito incluido',
     duration: '4 meses',
-    monthlyPrice: 975,
+    monthlyPrice: 895,
     totalPrice: 3900,
-    installments: '4 pagos mensuales de $975 MXN',
+    installments: '4 pagos mensuales de $895 MXN',
     ctaText: 'Quiero el programa Core',
     recommended: true,
   },
@@ -91,8 +91,8 @@ export const PROGRAMS_DATA = {
       '5 Módulos ESP 100% enfocados en tu industria o carrera',
       'Simulaciones de entrevistas, juntas y negociaciones reales',
       'Revisión de correos, contratos y terminología técnica',
-      '2 clases en vivo grupales + 1 tutoría 1 a 1 semanal',
-      'Preparación opcional para Certificación VTest / CENNI',
+      '2 sesiones en vivo grupales + 1 tutoría 1 a 1 semanal',
+      'Preparación opcional para Certificación VTest',
     ],
     requirements: 'Examen de ubicación, entrevista oral o certificación vigente (B1–C1)',
     duration: '4 meses',
@@ -102,6 +102,29 @@ export const PROGRAMS_DATA = {
     ctaText: 'Quiero el programa Specialty',
     recommended: false,
   },
+  moduleC1:{
+    id: 'Módulo C1',
+    name: 'Módulo Inglés C1',
+    badge: 'Mejorar el nivel de Inglés',
+    target: 'Preparación y aplicación TOEIC',
+    description: 'Enfocado 100% en inglés técnico y habilidades profesionales de alto impacto para el mercado global.',
+    content: [
+      'Duración 4 meses',
+      'Módulo nivel C1 + preparación TOEIC',
+      'Clases 3 veces por semana (Lunes, miércoles y jueves)',
+      'Club de conversación',
+      'Simulacro TOEIC y aplicación oficial del examen',
+      'Resultados examen TOEIC en solo 2 días',
+      'Aplicación revalidación CENNI + trámite ante la SEP',
+    ],
+    requirements: 'Examen de ubicación, entrevista oral o certificación vigente (B2–C1)',
+    duration: '4 meses',
+    monthlyPrice: 1860,
+    totalPrice: 5580,
+    installments: '3 pagos mensuales de $1,860 MXN sin interéses',
+    ctaText: 'Quiero el programa Módulo C1',
+    recommended: false,
+  }
 };
 
 export const ESP_MODULES_DATA = [
@@ -196,16 +219,16 @@ export const VTEST_AUTHORITY_DATA = {
       description: 'Recibes un desglose específico de qué puedes hacer en el mundo real, con certificado digital verificable por 3 años.',
       icon: 'Award',
     },
-    {
+    /* {
       title: 'Trámite de CENNI en México',
       description: 'Resultados listos para tramitar constancia, certificado o diploma CENNI oficial ante la SEP para trámites de titulación o empleo.',
       icon: 'FileCheck',
-    },
+    }, */
   ],
   seals: [
     { name: 'ALTE', role: 'Marco Común Europeo', subtitle: 'Pre-A1 a C2 Standard' },
     { name: 'ILTA', role: 'Validez Científica', subtitle: 'Psicometría Lingüística' },
-    { name: 'CENNI', role: 'SEP México', subtitle: 'Validez Oficial' },
+    /* { name: 'CENNI', role: 'SEP México', subtitle: 'Validez Oficial' }, */
   ],
 };
 
@@ -225,9 +248,9 @@ export const TESTIMONIALS_DATA = [
     role: 'Médico Residente de Medicina Interna',
     city: 'Modalidad Online (CDMX)',
     levelChange: 'De B1 a C1 con VTest',
-    outcome: 'Aprobó su certificación VTest y tramitó su CENNI para estancia clínica.',
+    outcome: 'Aprobó su certificación VTest',
     avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=300',
-    quote: 'El horario nocturno (8 a 9 pm) y las tutorías 1 a 1 se adaptaron perfecto a mis guardias. El vocabulario médico que enseñan es exactamente el que leo en journals.',
+    quote: 'El horario nocturno y las tutorías 1 a 1 se adaptaron perfecto a mis guardias. El vocabulario médico que enseñan es exactamente el que leo en journals.',
     rating: 5,
   },
   {
@@ -237,7 +260,7 @@ export const TESTIMONIALS_DATA = [
     levelChange: 'De Principiante a Intermedio B1',
     outcome: 'Manejo fluido de grupos de turistas europeos y negociación de tarifas.',
     avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=300',
-    quote: 'Había probado otras escuelas que solo te ponen videos. En Euroself las clases en vivo con profesor y el asistente de pronunciación me dieron la seguridad de hablar sin miedo.',
+    quote: 'Había probado otras escuelas que solo te ponen videos. En Euroself las sesiones en vivo con profesor y el asistente de pronunciación me dieron la seguridad de hablar sin miedo.',
     rating: 5,
   },
   {
@@ -255,8 +278,7 @@ export const TESTIMONIALS_DATA = [
 export const METRICS_DATA = [
   { value: '+1,200', label: 'Alumnos activos y egresados' },
   { value: '98%', label: 'Tasa de aprobación en certificaciones' },
-  { value: '40+', label: 'Países reconocen la prueba VTest' },
-  { value: '4.9/5', label: 'Calificación promedio de docentes' },
+  { value: '40+', label: 'Países reconocen la prueba VTest' }
 ];
 
 export const FAQ_DATA = [
@@ -265,8 +287,8 @@ export const FAQ_DATA = [
     a: 'No, para nada. En Euroself puedes iniciar completamente desde cero (nivel A1). Al inscribirte realizas un examen de ubicación gratuito que nos permite colocarte exactamente en el grupo y contenido adecuado para ti.',
   },
   {
-    q: '¿Cómo son las clases en vivo?',
-    a: 'Son 2 sesiones grupales dinámicas por semana con docente en tiempo real (lunes y miércoles, de 8:00 a 9:00 pm). Además, tienes 1 tutoría individual semanal 1 a 1 para corregir pronunciación y resolver dudas personales.',
+    q: '¿Cómo son las sesiones en vivo?',
+    a: 'Son 2 sesiones grupales dinámicas por semana con docente en tiempo real (lunes y miércoles). Además, tienes 1 tutoría individual semanal 1 a 1 para corregir pronunciación y resolver dudas personales.',
   },
   {
     q: '¿Qué pasa si no puedo conectarme a una clase en vivo?',
@@ -274,7 +296,7 @@ export const FAQ_DATA = [
   },
   {
     q: '¿La certificación tiene costo aparte?',
-    a: 'Sí, la certificación internacional VTest tiene un costo adicional de $2,440 MXN. Es completamente opcional y se recomienda presentarla a partir del nivel intermedio (B1) para formalizar tu nivel o tramitar CENNI.',
+    a: 'Sí, la certificación internacional VTest tiene un costo adicional, para conocer más de etse costo hable con su asesior y le dará la información necesaria. Es completamente opcional y se recomienda presentarla a partir del nivel intermedio (B1) para formalizar tu nivel.',
   },
   {
     q: '¿Cuánto dura el programa?',
@@ -285,12 +307,8 @@ export const FAQ_DATA = [
     a: 'ESP significa "English for Specific Purposes" (Inglés para Fines Específicos). Son módulos especializados en tu carrera o industria (Salud, TI, Hospitalidad, Negocios, Derecho, Ingeniería, etc.). Tú eliges los que mejor se alineen con tus metas laborales.',
   },
   {
-    q: '¿Cuál es la diferencia entre Euroself Core y Specialty?',
-    a: 'Euroself Core combina inglés general con 3 especialidades prácticas, ideal si estás entre A1 y B2. Euroself Specialty es 100% inglés técnico aplicado para quienes ya tienen base B1–C1 y quieren catapultar su perfil profesional.',
-  },
-  {
     q: '¿Puedo tomar el curso si trabajo tiempo completo?',
-    a: 'Totalmente. El programa fue diseñado pensando en profesionistas: las clases en vivo son en horario nocturno (8:00 a 9:00 pm), la plataforma está abierta 24/7 y las tutorías 1 a 1 se programan según tu disponibilidad.',
+    a: 'Totalmente. El programa fue diseñado pensando en profesionistas: las sesiones en vivo son en horario nocturno, la plataforma está abierta 24/7 y las tutorías 1 a 1 se programan según tu disponibilidad.',
   },
 ];
 

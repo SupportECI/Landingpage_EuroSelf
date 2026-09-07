@@ -1,6 +1,6 @@
 // Configuración de WhatsApp y generador de enlaces wa.me
 
-export const WHATSAPP_PHONE = '529618496379'; // Número oficial de Euroself Academy
+export const WHATSAPP_PHONE = '5571080066'; // Número oficial de Euroself Academy
 
 export const LEVEL_OPTIONS = [
   { id: 'none', label: 'No sé nada', valueText: 'Principiante / Desde cero (A1)' },
@@ -13,7 +13,7 @@ export const LEVEL_OPTIONS = [
 export const GOAL_OPTIONS = [
   { id: 'work', label: 'Trabajo o profesión', valueText: 'trabajo o mi profesión' },
   { id: 'travel', label: 'Viajar', valueText: 'viajar' },
-  { id: 'cert', label: 'Certificación (TOEIC / CENNI)', valueText: 'una certificación oficial (VTest / TOEIC / CENNI)' },
+  { id: 'cert', label: 'Certificación (TOEIC)', valueText: 'una certificación oficial (VTest / TOEIC)' },
   { id: 'school', label: 'Escuela o universidad', valueText: 'la escuela o universidad' },
 ];
 
@@ -52,6 +52,6 @@ export function generateWhatsAppLink({ name, level, goal, program, phone = '' })
  * Mensaje directo genérico para botones de contacto rápido
  */
 export function getQuickWhatsAppLink(customMessage = '') {
-  const msg = customMessage || 'Hola, quiero recibir asesoría personalizada sobre los programas de inglés de Euroself Academy y la promoción de lanzamiento de $975/mes.';
+  const msg = customMessage || 'Hola, quiero recibir asesoría personalizada sobre los programas de inglés de Euroself Academy y la promoción de lanzamiento de $95/mes.';
   return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
 }

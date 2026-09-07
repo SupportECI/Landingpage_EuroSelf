@@ -33,7 +33,7 @@ export function WhatIncludes() {
             ¿Qué incluye estudiar con Euroself?
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-            Un ecosistema de aprendizaje integral diseñado para que hables con soltura y avances de nivel con acompañamiento continuo.
+            Un ecosistema de autoestudio integral diseñado para que hables con soltura y avances de nivel con acompañamiento continuo.
           </p>
         </div>
 

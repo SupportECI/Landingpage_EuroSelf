@@ -29,7 +29,7 @@ export function Footer({ onNavClick }) {
               />
             </div>
             <p className="text-sm text-slate-400 leading-relaxed mb-6">
-              Plataforma y academia de inglés especializada para profesionistas y estudiantes en México. Clases en vivo, módulos por carrera y certificación internacional VTest.
+              Plataforma y academia de inglés especializada para profesionistas y estudiantes en México. sesiones en vivo, módulos por carrera y certificación internacional VTest.
             </p>
             <div className="flex items-center gap-3">
               {/* Facebook Icon */}
@@ -79,7 +79,7 @@ export function Footer({ onNavClick }) {
             <ul className="space-y-2.5 text-sm">
               <li>
                 <a href="#programas" className="hover:text-sky-400 transition-colors" onClick={(e) => { e.preventDefault(); onNavClick('programas'); }}>
-                  Euroself Core ($975/m)
+                  Euroself Core ($895/m)
                 </a>
               </li>
               <li>
@@ -117,9 +117,9 @@ export function Footer({ onNavClick }) {
               <li className="flex items-center gap-2 text-slate-300">
                 <ShieldCheck size={16} className="text-sky-400 shrink-0" /> ILTA (Validez)
               </li>
-              <li className="flex items-center gap-2 text-slate-300">
+              {/* <li className="flex items-center gap-2 text-slate-300">
                 <ShieldCheck size={16} className="text-sky-400 shrink-0" /> CENNI SEP
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -140,7 +140,7 @@ export function Footer({ onNavClick }) {
                 className="flex items-center gap-2.5 hover:text-emerald-400 transition-colors"
               >
                 <Phone size={18} className="text-emerald-400 shrink-0" />
-                <span>WhatsApp: +52 961 849 6379</span>
+                <span>WhatsApp: +52 55 7108 0066</span>
               </a>
               <a 
                 href="mailto:admisiones@euroself.edu.mx" 

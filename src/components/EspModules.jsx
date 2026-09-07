@@ -65,7 +65,7 @@ export function EspModules({ onSelectEspSpecialty }) {
             Inglés que sirve para tu profesión, no solo para el examen
           </h2>
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-            Elige tus módulos especializados (3 en Euroself Core o 5 en Euroself Specialty) y aprende el vocabulario, dinámicas y situaciones que realmente vives en tu trabajo diario.
+            Elige tus módulos especializados (3 en Euroself Core) y aprende el vocabulario, dinámicas y situaciones que realmente vives en tu trabajo diario.
           </p>
         </div>
 

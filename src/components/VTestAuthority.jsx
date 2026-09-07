@@ -9,12 +9,12 @@ import {
 import { VTEST_AUTHORITY_DATA } from '../data/landingData';
 import alteLogo from '../assets/Logo_ALTE_2022.svg';
 import iltaLogo from '../assets/logo_ilta.png';
-import cenniLogo from '../assets/cenni_copy.png';
+// import cenniLogo from '../assets/cenni_copy.png';
 
 const sealLogos = {
   ALTE: alteLogo,
   ILTA: iltaLogo,
-  CENNI: cenniLogo,
+  // CENNI: cenniLogo,
 };
 
 const vtestIconMap = {
@@ -26,7 +26,7 @@ const vtestIconMap = {
 };
 
 export function VTestAuthority() {
-  const { headline, subheadline, costNote, pillars, seals } = VTEST_AUTHORITY_DATA;
+  const { headline, subheadline, pillars } = VTEST_AUTHORITY_DATA;
 
   return (
     <section className="bg-white py-16 sm:py-20 lg:py-24" id="certificacion">
@@ -45,30 +45,69 @@ export function VTestAuthority() {
         </div>
 
         {/* Sellos de Confianza (ALTE, ILTA, CENNI) */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-14">
-          {seals.map((seal, idx) => (
-            <div 
-              key={idx} 
-              className="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-xl hover:border-brand-blue hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center"
-            >
-              <div className="h-16 w-full flex items-center justify-center mb-4 p-1">
-                <img 
-                  src={sealLogos[seal.name]} 
-                  alt={`Certificación oficial ${seal.name}`} 
-                  className="max-h-14 max-w-[160px] w-auto h-auto object-contain transition-transform duration-200 hover:scale-105" 
-                />
-              </div>
-              <h3 className="text-lg font-extrabold text-navy-900 mb-1">
-                {seal.name}
-              </h3>
-              <p className="text-xs sm:text-sm font-bold text-brand-blue mb-1">
-                {seal.role}
-              </p>
-              <span className="text-xs text-slate-500">
-                {seal.subtitle}
-              </span>
+        {/* Nota: Al reactivar CENNI, cambiar de sm:grid-cols-2 (max-w-2xl) a sm:grid-cols-3 (max-w-4xl) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-14">
+          {/* ALTE */}
+          <div className="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-xl hover:border-brand-blue hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+            <div className="h-16 w-full flex items-center justify-center mb-4 p-1">
+              <img 
+                src={sealLogos.ALTE} 
+                alt="Certificación oficial ALTE" 
+                className="max-h-14 max-w-[160px] w-auto h-auto object-contain transition-transform duration-200 hover:scale-105" 
+              />
             </div>
-          ))}
+            <h3 className="text-lg font-extrabold text-navy-900 mb-1">
+              ALTE
+            </h3>
+            <p className="text-xs sm:text-sm font-bold text-brand-blue mb-1">
+              Marco Común Europeo
+            </p>
+            <span className="text-xs text-slate-500">
+              Pre-A1 a C2 Standard
+            </span>
+          </div>
+
+          {/* ILTA */}
+          <div className="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-xl hover:border-brand-blue hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+            <div className="h-16 w-full flex items-center justify-center mb-4 p-1">
+              <img 
+                src={sealLogos.ILTA} 
+                alt="Certificación oficial ILTA" 
+                className="max-h-14 max-w-[160px] w-auto h-auto object-contain transition-transform duration-200 hover:scale-105" 
+              />
+            </div>
+            <h3 className="text-lg font-extrabold text-navy-900 mb-1">
+              ILTA
+            </h3>
+            <p className="text-xs sm:text-sm font-bold text-brand-blue mb-1">
+              Validez Científica
+            </p>
+            <span className="text-xs text-slate-500">
+              Psicometría Lingüística
+            </span>
+          </div>
+
+          {/* CENNI - Comentado temporalmente */}
+          {/* 
+          <div className="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-xl hover:border-brand-blue hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+            <div className="h-16 w-full flex items-center justify-center mb-4 p-1">
+              <img 
+                src={cenniLogo} 
+                alt="Certificación oficial CENNI" 
+                className="max-h-14 max-w-[160px] w-auto h-auto object-contain transition-transform duration-200 hover:scale-105" 
+              />
+            </div>
+            <h3 className="text-lg font-extrabold text-navy-900 mb-1">
+              CENNI
+            </h3>
+            <p className="text-xs sm:text-sm font-bold text-brand-blue mb-1">
+              SEP México
+            </p>
+            <span className="text-xs text-slate-500">
+              Validez Oficial
+            </span>
+          </div>
+          */}
         </div>
 
         {/* Pilares de Autoridad */}
@@ -98,7 +137,7 @@ export function VTestAuthority() {
         <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 sm:p-6 flex items-start sm:items-center gap-4 max-w-4xl mx-auto shadow-sm">
           <Info size={24} className="text-amber-600 shrink-0 mt-0.5 sm:mt-0" />
           <p className="text-xs sm:text-sm text-amber-950 leading-relaxed">
-            <strong className="font-bold text-amber-900">Transparencia Euroself:</strong> {costNote} Te preparamos a fondo para que la apruebes con la máxima calificación cuando decidas certificar tu nivel.
+            <strong className="font-bold text-amber-900">Transparencia Euroself:</strong> Te preparamos a fondo para que la apruebes con la máxima calificación cuando decidas certificar tu nivel.
           </p>
         </div>
       </div>

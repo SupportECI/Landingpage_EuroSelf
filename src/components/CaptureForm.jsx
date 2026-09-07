@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { User, Phone, MessageSquare, Check, Sparkles, Send, Lock } from 'lucide-react';
+import { User, Phone, Check, Send, Lock } from 'lucide-react';
 import { LEVEL_OPTIONS, GOAL_OPTIONS, generateWhatsAppLink } from '../data/whatsappConfig';
 
 export function CaptureForm({ selectedProgram, onFormSubmitSuccess }) {
@@ -42,25 +42,17 @@ export function CaptureForm({ selectedProgram, onFormSubmitSuccess }) {
     }
   };
 
-  // Preview dinámico del mensaje
-  const previewLevel = LEVEL_OPTIONS.find((l) => l.id === formData.level)?.valueText || 'Básico';
-  const previewGoal = GOAL_OPTIONS.find((g) => g.id === formData.goal)?.valueText || 'trabajo o mi profesión';
-  const previewName = formData.name.trim() || '[Tu Nombre]';
-
   return (
     <div 
-      className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl shadow-navy-950/20 border border-slate-200 text-slate-900 transition-all duration-300 relative"
+      className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl shadow-navy-950/20 border border-slate-200 text-slate-900 transition-all duration-300 relative lg:mt-6 scroll-mt-28"
       id="formulario-captura"
     >
       <div className="mb-5">
-        <span className="inline-flex items-center gap-1.5 bg-amber-100 text-amber-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-2">
-          <Sparkles size={13} /> Asesoría 1 a 1 Gratuita
-        </span>
         <h3 className="text-xl sm:text-2xl font-extrabold text-navy-900 tracking-tight mb-1">
           Descubre tu plan ideal
         </h3>
         <p className="text-sm text-slate-500">
-          Recibe recomendación personalizada y asegura tu precio de <strong className="text-navy-900 font-semibold">$975 MXN/mes</strong>.
+          Recibe recomendación personalizada y asegura tu precio de <strong className="text-navy-900 font-semibold">$895 MXN/mes</strong>.
         </p>
       </div>
 
@@ -98,7 +90,7 @@ export function CaptureForm({ selectedProgram, onFormSubmitSuccess }) {
               id="form-phone"
               type="tel"
               className="w-full pl-10 pr-4 py-2.5 sm:py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm sm:text-base text-slate-800 placeholder-slate-400 focus:bg-white focus:border-brand-cyan focus:ring-3 focus:ring-brand-cyan/15 focus:outline-none transition-all"
-              placeholder="Ej. 961 123 4567"
+              placeholder="Ej. 55 7108 0066"
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
             />
@@ -158,16 +150,6 @@ export function CaptureForm({ selectedProgram, onFormSubmitSuccess }) {
               );
             })}
           </div>
-        </div>
-
-        {/* Vista previa del mensaje de WhatsApp */}
-        <div className="bg-emerald-50/80 border border-dashed border-emerald-300 rounded-xl p-3.5 text-left">
-          <div className="flex items-center gap-1.5 text-[11px] font-bold text-emerald-800 uppercase tracking-wide mb-1">
-            <MessageSquare size={13} /> Mensaje pre-cargado que enviarás:
-          </div>
-          <p className="text-xs text-emerald-900 italic leading-relaxed">
-            "Hola, soy {previewName}. Quiero información sobre el programa de inglés de Euroself. Mi nivel actual es {previewLevel} y busco el inglés principalmente para {previewGoal}. ¿Me pueden orientar...?"
-          </p>
         </div>
 
         {/* CTA Específico */}
