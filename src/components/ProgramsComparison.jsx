@@ -42,7 +42,7 @@ export function ProgramsComparison({ onSelectProgram }) {
                   {core.name}
                 </h3>
                 <div className="inline-block bg-slate-100 text-navy-800 text-xs sm:text-sm font-semibold px-3 py-1 rounded-lg mb-4">
-                  🎯 {core.target}
+                  {core.target}
                 </div>
 
                 <div className="flex items-baseline justify-center gap-1 mb-1">
@@ -53,7 +53,7 @@ export function ProgramsComparison({ onSelectProgram }) {
                   <span className="text-sm font-semibold text-slate-500">MXN / mes</span>
                 </div>
                 <p className="text-xs text-slate-500">
-                  4 pagos mensuales (Total: ${core.totalPrice.toLocaleString()} MXN)
+                  4 pagos mensuales (Total: ${core.totalPrice.toLocaleString()} MXN), más inscripción
                 </p>
               </div>
 

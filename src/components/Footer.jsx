@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import { 
-  MapPin, 
+import {  
   Phone, 
-  Mail, 
   ShieldCheck, 
   X
 } from 'lucide-react';
@@ -126,13 +124,9 @@ export function Footer({ onNavClick }) {
           {/* Col 4: Contacto & Ubicación (3 cols) */}
           <div className="lg:col-span-3">
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4">
-              Contacto & Ubicación
+              Contacto
             </h4>
             <div className="space-y-3 text-sm">
-              <div className="flex items-start gap-2.5">
-                <MapPin size={18} className="text-sky-400 shrink-0 mt-0.5" />
-                <span>Sede: Tuxtla Gutiérrez, Chiapas. Modalidad Online en México.</span>
-              </div>
               <a 
                 href={`https://wa.me/${WHATSAPP_PHONE}`} 
                 target="_blank" 
@@ -141,13 +135,6 @@ export function Footer({ onNavClick }) {
               >
                 <Phone size={18} className="text-emerald-400 shrink-0" />
                 <span>WhatsApp: +52 55 7108 0066</span>
-              </a>
-              <a 
-                href="mailto:admisiones@euroself.edu.mx" 
-                className="flex items-center gap-2.5 hover:text-sky-400 transition-colors"
-              >
-                <Mail size={18} className="text-sky-400 shrink-0" />
-                <span>admisiones@euroself.edu.mx</span>
               </a>
             </div>
           </div>
