@@ -92,7 +92,7 @@ export const PROGRAMS_DATA = {
       'Simulaciones de entrevistas, juntas y negociaciones reales',
       'Revisión de correos, contratos y terminología técnica',
       '2 sesiones en vivo grupales + 1 tutoría 1 a 1 semanal',
-      'Preparación opcional para Certificación VTest',
+      'Preparación opcional para Certificación TOEIC',
     ],
     requirements: 'Examen de ubicación, entrevista oral o certificación vigente (B1–C1)',
     duration: '4 meses',
@@ -193,10 +193,10 @@ export const ESP_MODULES_DATA = [
   },
 ];
 
-export const VTEST_AUTHORITY_DATA = {
-  headline: 'Certificación Internacional VTest',
+export const TOEIC_AUTHORITY_DATA = {
+  headline: 'Certificación Internacional TOEIC',
   subheadline: 'A diferencia de cursos que ofrecen diplomas sin validez, Euroself te prepara para certificar tu nivel con respaldo científico y reconocimiento global.',
-  costNote: 'Costo adicional de examen de certificación VTest: $2,440 MXN (100% opcional, no incluido en la mensualidad).',
+  costNote: 'Costo adicional de examen de certificación TOEIC: $2,440 MXN (100% opcional, no incluido en la mensualidad).',
   pillars: [
     {
       title: 'Avalada por Organismos Mundiales',
@@ -225,6 +225,8 @@ export const VTEST_AUTHORITY_DATA = {
     }, */
   ],
   seals: [
+    { name: 'ETS', role: 'Creador Oficial TOEIC', subtitle: 'Educational Testing Service' },
+    { name: 'ATP', role: 'Estándares de Evaluación', subtitle: 'Association of Test Publishers' },
     { name: 'ALTE', role: 'Marco Común Europeo', subtitle: 'Pre-A1 a C2 Standard' },
     { name: 'ILTA', role: 'Validez Científica', subtitle: 'Psicometría Lingüística' },
     /* { name: 'CENNI', role: 'SEP México', subtitle: 'Validez Oficial' }, */
@@ -265,7 +267,7 @@ export const VIDEO_TESTIMONIALS = [
 export const METRICS_DATA = [
   { value: '+1,200', label: 'Alumnos activos y egresados' },
   { value: '98%', label: 'Tasa de aprobación en certificaciones' },
-  { value: '40+', label: 'Países reconocen la prueba VTest' }
+  { value: '40+', label: 'Países reconocen la prueba TOEIC' }
 ];
 
 export const FAQ_DATA = [
@@ -283,7 +285,7 @@ export const FAQ_DATA = [
   },
   {
     q: '¿La certificación tiene costo aparte?',
-    a: 'Sí, la certificación internacional VTest tiene un costo adicional, para conocer más de etse costo hable con su asesior y le dará la información necesaria. Es completamente opcional y se recomienda presentarla a partir del nivel intermedio (B1) para formalizar tu nivel.',
+    a: 'Sí, la certificación internacional TOEIC tiene un costo adicional, para conocer más de etse costo hable con su asesior y le dará la información necesaria. Es completamente opcional y se recomienda presentarla a partir del nivel intermedio (B1) para formalizar tu nivel.',
   },
   {
     q: '¿Cuánto dura el programa?',

@@ -64,7 +64,7 @@ export function Navbar({ onOpenPlacementTest, onFormScroll }) {
                 className="text-sm font-semibold text-slate-600 hover:text-brand-blue transition-colors duration-150 py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-blue hover:after:w-full after:transition-all after:duration-200" 
                 onClick={(e) => { e.preventDefault(); handleNavClick('certificacion'); }}
               >
-                Certificación VTest
+                Certificación TOEIC
               </a>
             </li>
             <li>
@@ -152,7 +152,7 @@ export function Navbar({ onOpenPlacementTest, onFormScroll }) {
               className="block text-base font-semibold text-slate-700 hover:text-brand-blue py-1"
               onClick={(e) => { e.preventDefault(); handleNavClick('certificacion'); }}
             >
-              Certificación VTest
+              Certificación TOEIC
             </a>
           </li>
           <li>

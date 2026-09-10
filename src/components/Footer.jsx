@@ -27,7 +27,7 @@ export function Footer({ onNavClick }) {
               />
             </div>
             <p className="text-sm text-slate-400 leading-relaxed mb-6">
-              Plataforma y academia de inglés especializada para profesionistas y estudiantes en México. sesiones en vivo, módulos por carrera y certificación internacional VTest.
+              Plataforma y academia de inglés especializada para profesionistas y estudiantes en México. sesiones en vivo, módulos por carrera y certificación internacional TOEIC.
             </p>
             <div className="flex items-center gap-3">
               {/* Facebook Icon */}
@@ -92,7 +92,7 @@ export function Footer({ onNavClick }) {
               </li>
               <li>
                 <a href="#certificacion" className="hover:text-sky-400 transition-colors" onClick={(e) => { e.preventDefault(); onNavClick('certificacion'); }}>
-                  Certificación VTest
+                  Certificación TOEIC
                 </a>
               </li>
               <li>
@@ -115,9 +115,15 @@ export function Footer({ onNavClick }) {
               <li className="flex items-center gap-2 text-slate-300">
                 <ShieldCheck size={16} className="text-sky-400 shrink-0" /> ILTA (Validez)
               </li>
+              <li className="flex items-center gap-2 text-slate-300">
+                <ShieldCheck size={16} className="text-sky-400 shrink-0" /> ETS 
+              </li>
+              <li className="flex items-center gap-2 text-slate-300">
+                <ShieldCheck size={16} className="text-sky-400 shrink-0" /> ATP
+              </li>
               {/* <li className="flex items-center gap-2 text-slate-300">
                 <ShieldCheck size={16} className="text-sky-400 shrink-0" /> CENNI SEP
-              </li> */}
+              </li>  */}
             </ul>
           </div>
 

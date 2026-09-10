@@ -13,7 +13,7 @@ export const LEVEL_OPTIONS = [
 export const GOAL_OPTIONS = [
   { id: 'work', label: 'Trabajo o profesión', valueText: 'trabajo o mi profesión' },
   { id: 'travel', label: 'Viajar', valueText: 'viajar' },
-  { id: 'cert', label: 'Certificación (TOEIC)', valueText: 'una certificación oficial (VTest / TOEIC)' },
+  { id: 'cert', label: 'Certificación (TOEIC)', valueText: 'una certificación oficial (TOEIC / TOEIC)' },
   { id: 'school', label: 'Escuela o universidad', valueText: 'la escuela o universidad' },
 ];
 

@@ -23,7 +23,7 @@ export function Hero({ selectedProgram, onFormSubmitSuccess, onOpenPlacementTest
           {/* Left Column: Headlines, Trust & Features */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-sky-200 mb-6 shadow-sm max-w-full">
-              <ShieldCheck size={16} className="text-sky-300 shrink-0" /> <span className="whitespace-normal leading-tight">Certificación VTest reconocida en +40 países</span>
+              <ShieldCheck size={16} className="text-sky-300 shrink-0" /> <span className="whitespace-normal leading-tight">Certificación TOEIC reconocida en +40 países</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight sm:leading-tight lg:leading-[1.15] tracking-tight mb-5">
@@ -35,7 +35,7 @@ export function Hero({ selectedProgram, onFormSubmitSuccess, onOpenPlacementTest
             </h1>
 
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-7 max-w-2xl">
-              Un programa 100% personalizable y de autoaprendizaje — desde cero (A1) hasta especializarte en tu profesión — con plataforma interactiva 24/7 y respaldo oficial VTest, ALTE e ILTA.
+              Un programa 100% personalizable y de autoaprendizaje — desde cero (A1) hasta especializarte en tu profesión — con plataforma interactiva 24/7 y respaldo oficial TOEIC, ALTE e ILTA.
             </p>
 
             {/* Bullets de Alto Valor */}

@@ -6,18 +6,22 @@ import {
   FileCheck, 
   Info
 } from 'lucide-react';
-import { VTEST_AUTHORITY_DATA } from '../data/landingData';
+import { TOEIC_AUTHORITY_DATA } from '../data/landingData';
 import alteLogo from '../assets/Logo_ALTE_2022.svg';
 import iltaLogo from '../assets/logo_ilta.png';
+import etsLogo from '../assets/ets-logo.png';
+import atpLogo from '../assets/atp-logo.webp';
 // import cenniLogo from '../assets/cenni_copy.png';
 
 const sealLogos = {
+  ETS: etsLogo,
+  ATP: atpLogo,
   ALTE: alteLogo,
   ILTA: iltaLogo,
   // CENNI: cenniLogo,
 };
 
-const vtestIconMap = {
+const TOEICIconMap = {
   ShieldCheck: ShieldCheck,
   Cpu: Cpu,
   CheckCheck: CheckCheck,
@@ -25,8 +29,8 @@ const vtestIconMap = {
   FileCheck: FileCheck,
 };
 
-export function VTestAuthority() {
-  const { headline, subheadline, pillars } = VTEST_AUTHORITY_DATA;
+export function TOEICAuthority() {
+  const { headline, subheadline, pillars } = TOEIC_AUTHORITY_DATA;
 
   return (
     <section className="bg-white py-16 sm:py-20 lg:py-24" id="certificacion">
@@ -44,9 +48,48 @@ export function VTestAuthority() {
           </p>
         </div>
 
-        {/* Sellos de Confianza (ALTE, ILTA, CENNI) */}
-        {/* Nota: Al reactivar CENNI, cambiar de sm:grid-cols-2 (max-w-2xl) a sm:grid-cols-3 (max-w-4xl) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-14">
+        {/* Sellos de Confianza (ETS, ATP, ALTE, ILTA) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-14">
+          {/* ETS */}
+          <div className="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-xl hover:border-brand-blue hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+            <div className="h-16 w-full flex items-center justify-center mb-4 p-1">
+              <img 
+                src={sealLogos.ETS} 
+                alt="Certificación oficial ETS TOEIC" 
+                className="max-h-14 max-w-[160px] w-auto h-auto object-contain transition-transform duration-200 hover:scale-105" 
+              />
+            </div>
+            <h3 className="text-lg font-extrabold text-navy-900 mb-1">
+              ETS
+            </h3>
+            <p className="text-xs sm:text-sm font-bold text-brand-blue mb-1">
+              Creador Oficial TOEIC
+            </p>
+            <span className="text-xs text-slate-500">
+              Educational Testing Service
+            </span>
+          </div>
+
+          {/* ATP */}
+          <div className="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-xl hover:border-brand-blue hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+            <div className="h-16 w-full flex items-center justify-center mb-4 p-1">
+              <img 
+                src={sealLogos.ATP} 
+                alt="Association of Test Publishers" 
+                className="max-h-14 max-w-[160px] w-auto h-auto object-contain transition-transform duration-200 hover:scale-105" 
+              />
+            </div>
+            <h3 className="text-lg font-extrabold text-navy-900 mb-1">
+              ATP
+            </h3>
+            <p className="text-xs sm:text-sm font-bold text-brand-blue mb-1">
+              Estándares de Evaluación
+            </p>
+            <span className="text-xs text-slate-500">
+              Association of Test Publishers
+            </span>
+          </div>
+
           {/* ALTE */}
           <div className="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-xl hover:border-brand-blue hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
             <div className="h-16 w-full flex items-center justify-center mb-4 p-1">
@@ -86,34 +129,12 @@ export function VTestAuthority() {
               Psicometría Lingüística
             </span>
           </div>
-
-          {/* CENNI - Comentado temporalmente */}
-          {/* 
-          <div className="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-xl hover:border-brand-blue hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
-            <div className="h-16 w-full flex items-center justify-center mb-4 p-1">
-              <img 
-                src={cenniLogo} 
-                alt="Certificación oficial CENNI" 
-                className="max-h-14 max-w-[160px] w-auto h-auto object-contain transition-transform duration-200 hover:scale-105" 
-              />
-            </div>
-            <h3 className="text-lg font-extrabold text-navy-900 mb-1">
-              CENNI
-            </h3>
-            <p className="text-xs sm:text-sm font-bold text-brand-blue mb-1">
-              SEP México
-            </p>
-            <span className="text-xs text-slate-500">
-              Validez Oficial
-            </span>
-          </div>
-          */}
         </div>
 
         {/* Pilares de Autoridad */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {pillars.map((pillar, idx) => {
-            const IconComp = vtestIconMap[pillar.icon] || ShieldCheck;
+            const IconComp = TOEICIconMap[pillar.icon] || ShieldCheck;
             return (
               <div 
                 key={idx} 
@@ -145,4 +166,4 @@ export function VTestAuthority() {
   );
 }
 
-export default VTestAuthority;
+export default TOEICAuthority;

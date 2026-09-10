@@ -5,7 +5,7 @@ import Hero from './components/Hero';
 import WhatIncludes from './components/WhatIncludes';
 import ProgramsComparison from './components/ProgramsComparison';
 import EspModules from './components/EspModules';
-import VTestAuthority from './components/VTestAuthority';
+import TOEICAuthority from './components/TOEICAuthority';
 import PlacementTestSection from './components/PlacementTestModal';
 import SocialProof from './components/SocialProof';
 import FaqSection from './components/FaqSection';
@@ -68,8 +68,8 @@ function App() {
         {/* 5B. Especialidades por Profesión (Módulos ESP) */}
         <EspModules onSelectEspSpecialty={() => scrollToForm('Euroself Specialty')} />
 
-        {/* 6. Certificación VTest — Bloque de Autoridad */}
-        <VTestAuthority />
+        {/* 6. Certificación TOEIC — Bloque de Autoridad */}
+        <TOEICAuthority />
 
         {/* 7. Examen de Ubicación Gratuito según el MCER */}
         <PlacementTestSection 

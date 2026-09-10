@@ -18,7 +18,7 @@ export function FinalCta({ onFormScroll }) {
         </h2>
 
         <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-8 leading-relaxed">
-          Aprende a tu ritmo desde <strong className="text-sky-300 font-bold">{PROMO_DATA.pricePerMonth} MXN/mes</strong> con sesiones en vivo, especialidad para tu profesión y certificación internacional VTest.
+          Aprende a tu ritmo desde <strong className="text-sky-300 font-bold">{PROMO_DATA.pricePerMonth} MXN/mes</strong> con sesiones en vivo, especialidad para tu profesión y certificación internacional TOEIC.
         </p>
 
         {/* Dual CTA Buttons */}
