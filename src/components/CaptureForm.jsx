@@ -43,7 +43,7 @@ export function CaptureForm({ selectedProgram, onFormSubmitSuccess }) {
   };
 
   return (
-    <div 
+    <div
       className="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl shadow-navy-950/20 border border-slate-200 text-slate-900 transition-all duration-300 relative lg:mt-6 scroll-mt-28"
       id="formulario-captura"
     >
@@ -90,7 +90,7 @@ export function CaptureForm({ selectedProgram, onFormSubmitSuccess }) {
               id="form-phone"
               type="tel"
               className="w-full pl-10 pr-4 py-2.5 sm:py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm sm:text-base text-slate-800 placeholder-slate-400 focus:bg-white focus:border-brand-cyan focus:ring-3 focus:ring-brand-cyan/15 focus:outline-none transition-all"
-              placeholder="Ej. 55 7108 0066"
+              placeholder="Ej. 961 123 4567"
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
             />
@@ -110,11 +110,10 @@ export function CaptureForm({ selectedProgram, onFormSubmitSuccess }) {
                 <button
                   key={opt.id}
                   type="button"
-                  className={`${isLastFull ? 'col-span-2' : 'col-span-1'} p-2.5 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 border transition-all duration-150 cursor-pointer text-center ${
-                    isSelected
+                  className={`${isLastFull ? 'col-span-2' : 'col-span-1'} p-2.5 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 border transition-all duration-150 cursor-pointer text-center ${isSelected
                       ? 'bg-navy-900 text-white border-navy-900 shadow-md shadow-navy-900/20'
                       : 'bg-slate-50 text-navy-900 border-slate-200 hover:border-brand-cyan hover:bg-sky-50'
-                  }`}
+                    }`}
                   onClick={() => handleLevelSelect(opt.id)}
                 >
                   {isSelected && <Check size={13} className="shrink-0 text-sky-300" />}
@@ -137,11 +136,10 @@ export function CaptureForm({ selectedProgram, onFormSubmitSuccess }) {
                 <button
                   key={opt.id}
                   type="button"
-                  className={`p-2.5 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 border transition-all duration-150 cursor-pointer text-center ${
-                    isSelected
+                  className={`p-2.5 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 border transition-all duration-150 cursor-pointer text-center ${isSelected
                       ? 'bg-navy-900 text-white border-navy-900 shadow-md shadow-navy-900/20'
                       : 'bg-slate-50 text-navy-900 border-slate-200 hover:border-brand-cyan hover:bg-sky-50'
-                  }`}
+                    }`}
                   onClick={() => handleGoalSelect(opt.id)}
                 >
                   {isSelected && <Check size={13} className="shrink-0 text-sky-300" />}
@@ -153,8 +151,8 @@ export function CaptureForm({ selectedProgram, onFormSubmitSuccess }) {
         </div>
 
         {/* CTA Específico */}
-        <button 
-          type="submit" 
+        <button
+          type="submit"
           className="w-full inline-flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp-hover text-white font-bold text-base py-3.5 px-6 rounded-xl shadow-lg shadow-emerald-500/25 hover:shadow-xl hover:shadow-emerald-500/35 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
         >
           <Send size={18} /> Quiero conocer mi programa ideal
